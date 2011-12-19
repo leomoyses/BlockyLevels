@@ -42,7 +42,7 @@ public class BlockyLevels extends JavaPlugin {
 		setupPermissions();
 		
 		log.info("[BlockyLevels] has been enabled!");
-		log.info("[BlockyLevels] Current Version: 1.2.1 R1");
+		log.info("[BlockyLevels] Current Version: 1.2.1 R2");
 		
 		try{
 			config = getConfig();
