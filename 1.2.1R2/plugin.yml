@@ -1,5 +1,5 @@
 name: BlockyLevels
-version: 1.2.1 R1
+version: 1.2.1 R2
 main: com.galaxycraft.blockylevels.BlockyLevels
 depend: [Vault]
 commands:
@@ -14,7 +14,6 @@ permissions:
             blockylevels.level: true
             blockylevels.reload: true
             blockylevels.set: true
-            blockylevels.price: true
     blockylevels.block:
         description: Allows you to convert all your levels to blocks.
         default: op

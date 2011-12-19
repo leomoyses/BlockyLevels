@@ -140,14 +140,6 @@ public class BlockyLevelsCommandExecutor implements CommandExecutor {
 						return true;
 					}
 				}
-				if(args[0].equalsIgnoreCase("debug")){
-					if(args[1].equalsIgnoreCase("plugin")){
-							int debugArgs = Integer.parseInt(args[2]);
-							int debugArgs2 = Integer.parseInt(args[3]);
-							inventory.addItem(new ItemStack(debugArgs, debugArgs2));	
-							return true;
-					}
-				}
 				if(args[0].equalsIgnoreCase("reload")) {
 					if (!isAuthorized(player, "blockylevels.reload")){
 						player.sendMessage(ChatColor.RED + "You don't have permissions for this command!");
