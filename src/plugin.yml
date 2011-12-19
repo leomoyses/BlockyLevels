@@ -1,0 +1,29 @@
+name: BlockyLevels
+version: 0.99
+main: com.galaxycraft.blockylevels.BlockyLevels
+depend: [Vault]
+commands:
+  bl:
+    description: Type it to see full command help.
+    usage: /bl
+permissions:
+    blockylevels.*:
+        description: Gives access to all BlockyLevels functions.
+        children:
+            blockylevels.block: true
+            blockylevels.level: true
+            blockylevels.reload: true
+            blockylevels.set: true
+            blockylevels.price: true
+    blockylevels.block:
+        description: Allows you to convert all your levels to blocks.
+        default: op
+    blockylevels.level:
+        description: Allows you to convert your blocks to levels.
+        default: op
+    blockylevels.reload:
+        description: Allows you to reload the plugin.
+        default: op
+    blockylevels.set:
+        description: Allows you to edit the config.yml in-game.
+        default: op
