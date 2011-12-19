@@ -3,7 +3,6 @@ package com.galaxycraft.blockylevels;
 import java.io.File;
 import java.util.logging.Logger;
 
-import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
 
 import org.bukkit.configuration.file.FileConfiguration;
@@ -13,7 +12,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class BlockyLevels extends JavaPlugin {
 	
     public static Permission permission = null;
-    public static Economy economy = null;
 
     public Boolean setupPermissions()
     {
@@ -22,15 +20,6 @@ public class BlockyLevels extends JavaPlugin {
             permission = permissionProvider.getProvider();
         }
         return (permission != null);
-    }
-    public Boolean setupEconomy()
-    {
-        RegisteredServiceProvider<Economy> economyProvider = getServer().getServicesManager().getRegistration(net.milkbowl.vault.economy.Economy.class);
-        if (economyProvider != null) {
-            economy = economyProvider.getProvider();
-        }
-
-        return (economy != null);
     }
 	
 	protected FileConfiguration config;
@@ -51,10 +40,9 @@ public class BlockyLevels extends JavaPlugin {
 		this.getCommand("bl").setExecutor(new BlockyLevelsCommandExecutor(this));
 		
 		setupPermissions();
-		setupEconomy();
 		
 		log.info("[BlockyLevels] has been enabled!");
-		log.info("[BlockyLevels] Current Version: 0.99 Beta");
+		log.info("[BlockyLevels] Current Version: 1.2.1 R1");
 		
 		try{
 			config = getConfig();
@@ -65,18 +53,6 @@ public class BlockyLevels extends JavaPlugin {
 		}
 		if(!config.contains("config.blockid")){
 		    config.set("config.blockid", 19);
-		}
-		if(!config.contains("economy.enabled")){
-		    config.set("economy.enabled", false);
-		}
-		if(!config.contains("economy.currency")){
-		    config.set("economy.currency", "Dollars");
-		}
-		if(!config.contains("economy.blockprice")){
-		    config.set("economy.blockprice", 100);
-		}
-		if(!config.contains("economy.levelprice")){
-		    config.set("economy.levelprice", 100);
 		}
 		saveConfig();
 		}catch(Exception e1){

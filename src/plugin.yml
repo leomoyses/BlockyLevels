@@ -1,5 +1,5 @@
 name: BlockyLevels
-version: 0.99
+version: 1.2.1 R1
 main: com.galaxycraft.blockylevels.BlockyLevels
 depend: [Vault]
 commands:
